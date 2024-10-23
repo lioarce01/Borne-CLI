@@ -10,7 +10,7 @@ export default {
     try {
       const status = await git.status();
       console.log("Repository status:");
-      console.log(status);
+      console.log(status.isClean());
     } catch (error) {
       console.error("Error retrieving repository status:", error.message);
     }
