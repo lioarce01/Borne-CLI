@@ -11,9 +11,9 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const TOKEN = process.env.GITHUB_TOKEN;
+const octokit = new Octokit({ auth: TOKEN });
 
 const git = simpleGit();
-const octokit = new Octokit({ auth: TOKEN });
 
 //GIT CLONE COMMAND
 yargs(hideBin(process.argv))
@@ -281,7 +281,7 @@ yargs(hideBin(process.argv))
         process.chdir(argv.directory);
         console.log(`Working directory changed to: ${process.cwd()}`);
       } catch (error) {
-        console.error("Error setting working directory");
+        console.error("Error setting working directory", error.message);
       }
     }
   )

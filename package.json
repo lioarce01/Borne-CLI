@@ -2,10 +2,10 @@
   "name": "my-cli",
   "version": "1.0.0",
   "description": "A tool for Git and Github",
-  "main": "myCli.js",
+  "main": "index.js",
   "type": "module",
   "bin": {
-    "myCli": "./myCli.js"
+    "myCli": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
