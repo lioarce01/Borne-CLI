@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import simpleGit from "simple-git";
 import { Octokit } from "@octokit/rest";
 import { hideBin } from "yargs/helpers";
@@ -276,8 +278,8 @@ yargs(hideBin(process.argv))
           return;
         }
 
-        git.cwd(dir);
-        console.log(`Working diretory set to: ${dir}`);
+        process.chdir(argv.directory);
+        console.log(`Working directory changed to: ${process.cwd()}`);
       } catch (error) {
         console.error("Error setting working directory");
       }

@@ -1,9 +1,22 @@
 {
+  "name": "my-cli",
+  "version": "1.0.0",
+  "description": "A tool for Git and Github",
+  "main": "myCli.js",
   "type": "module",
+  "bin": {
+    "myCli": "./myCli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "github.com/lioarce01",
   "dependencies": {
     "@octokit/rest": "^21.0.2",
     "dotenv": "^16.4.5",
     "fs": "0.0.1-security",
+    "link": "^2.1.1",
     "simple-git": "^3.27.0",
     "yargs": "^17.7.2"
   }
