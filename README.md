@@ -11,7 +11,6 @@ Welcome to Borne This project allows you to interact with Git and GitHub from th
 - **Set remote repositories**
 - **Perform `pull` and `push` operations**
 
-
 ## Installation 🛠️
 
 1. Install Borne globally using npm:
@@ -43,52 +42,71 @@ brn set-dir [directory]         Set working directory for Git commands
 brn config-user                 Configure Git user name and email
 brn exit                        Exit the program
 ```
+
 Examples
 
 Here are some examples of how to use the brn commands:
 
 1. Clone a repository:
+
 ```shellscript
 brn clone [https://github.com/user/repo.git](https://github.com/user/repo.git) my-project
 ```
+
 2. Create a new repository:
+
 ```shellscript
 brn create-repo my-new-project
 ```
+
 3. Add files to staging:
+
 ```shellscript
 brn add .
 ```
+
 4. Commit changes:
+
 ```shellscript
 brn commit "Initial commit"
 ```
+
 5. Push changes:
+
 ```shellscript
 brn push origin main
 ```
+
 6. Create and switch to a new branch:
+
 ```shellscript
 brn create-branch feature-branch
 brn switch-branch feature-branch
 ```
+
 7. Show repository status:
+
 ```shellscript
 brn status
 ```
+
 8. View commit history:
+
 ```shellscript
 brn log
 ```
+
 9. Set a remote repository:
+
 ```shellscript
 brn set-remote origin [https://github.com/user/repo.git](https://github.com/user/repo.git)
 ```
+
 10. Set working directory:
+
 ```shellscript
 brn set-dir /path/to/your/project
 ```
-
 
 Configuration
 
@@ -110,18 +128,9 @@ We welcome contributions to Borne! If you'd like to contribute:
 4. Push to the branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
 
-
 Please make sure to update tests as appropriate and adhere to the project's coding standards.
 
-## License
-
-Borne is open source software licensed under the MIT License. This license permits you to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, subject to the following conditions:
-
-- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
-
-
-For the full license text, please see the LICENSE file in the root directory of this project.
+## [License](LICENSE)
 
 Your feedback and contributions help make Borne better for everyone. Don't hesitate to reach out!
 
