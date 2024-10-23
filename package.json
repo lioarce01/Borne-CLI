@@ -1,11 +1,11 @@
 {
-  "name": "my-cli",
+  "name": "borne",
   "version": "1.0.0",
-  "description": "A tool for Git and Github",
+  "description": "A tool for Git and GitHub",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "myCli": "./index.js"
+    "brn": "./brn.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
