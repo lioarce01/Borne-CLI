@@ -10,7 +10,10 @@ export default {
     try {
       const status = await git.status();
       console.log("Repository status:");
-      console.log(status.isClean());
+      console.log(
+        status.isClean() === true ? "Clean" : "Modified files:",
+        status.modified
+      );
     } catch (error) {
       console.error("Error retrieving repository status:", error.message);
     }
