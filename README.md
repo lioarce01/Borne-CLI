@@ -1,6 +1,6 @@
-# Git CLI 🐙
+# Borne 🐙
 
-Welcome to the Git CLI! This project allows you to interact with Git and GitHub from the terminal in a simple and efficient way. Use this CLI to manage your repositories, branches, and commits without leaving the command line.
+Welcome to Borne This project allows you to interact with Git and GitHub from the terminal in a simple and efficient way. Use this CLI to manage your repositories, branches, and commits without leaving the command line.
 
 ## Features 🌟
 
@@ -14,157 +14,115 @@ Welcome to the Git CLI! This project allows you to interact with Git and GitHub 
 
 ## Installation 🛠️
 
-1. Clone the repository:
+1. Install Borne globally using npm:
 
 ```shellscript
-git clone <repository_url>
+npm install -g borne
 ```
-
-
-2. Navigate to the project directory:
-
-```shellscript
-cd <directory_name>
-```
-
-
-3. Install dependencies:
-
-```shellscript
-npm install
-```
-
-
-4. Create a .env file and add your GitHub token:
-
-```plaintext
-GITHUB_TOKEN=your_github_token
-```
-
-
-
 
 ## Usage 🚀
 
-1. Set the working directory
+After installation, use the brn command followed by various subcommands to interact with Git repositories.
+
+Available Commands
 
 ```shellscript
-node lioarce01.js set-dir <directory>
+brn clone [repoUrl] [dir]       Clone a repository
+brn create-repo [repoName]      Create a new repository
+brn add [files]                 Add files to the Git index (staging area)
+brn commit [message]            Commit changes with a message
+brn push `<origin>` `<branch>`      Push changes to a remote repository
+brn pull                        Pull changes from a remote repository
+brn status                      Show the status of the repository
+brn log                         Show commit history
+brn create-branch [branchName]  Create a new branch
+brn switch-branch [branchName]  Switch to a branch
+brn delete-branch [branchName]  Delete a branch
+brn set-remote [name] [url]     Set a remote repository
+brn set-dir [directory]         Set working directory for Git commands
+brn config-user                 Configure Git user name and email
+brn exit                        Exit the program
+```
+Examples
+
+Here are some examples of how to use the brn commands:
+
+1. Clone a repository:
+```shellscript
+brn clone [https://github.com/user/repo.git](https://github.com/user/repo.git) my-project
+```
+2. Create a new repository:
+```shellscript
+brn create-repo my-new-project
+```
+3. Add files to staging:
+```shellscript
+brn add .
+```
+4. Commit changes:
+```shellscript
+brn commit "Initial commit"
+```
+5. Push changes:
+```shellscript
+brn push origin main
+```
+6. Create and switch to a new branch:
+```shellscript
+brn create-branch feature-branch
+brn switch-branch feature-branch
+```
+7. Show repository status:
+```shellscript
+brn status
+```
+8. View commit history:
+```shellscript
+brn log
+```
+9. Set a remote repository:
+```shellscript
+brn set-remote origin [https://github.com/user/repo.git](https://github.com/user/repo.git)
+```
+10. Set working directory:
+```shellscript
+brn set-dir /path/to/your/project
 ```
 
-Description: Sets the directory where Git commands will be executed.
 
+Configuration
 
-2. Clone a repository
+Before using Borne, configure your Git user name and email:
 
 ```shellscript
-node lioarce01.js clone <repository_url> [directory]
+brn config-user
 ```
 
-Description: Clones a repository into the specified directory or the current directory if none is provided.
-
-
-3. Create a new repository
-
-```shellscript
-node lioarce01.js create-repo <repository_name>
-```
-
-Description: Creates a new repository in the current working directory.
-
-
-4. Create a new branch
-
-```shellscript
-node lioarce01.js create-branch <branch_name>
-```
-
-Description: Creates a new branch in the current repository.
-
-
-5. Switch branches
-
-```shellscript
-node lioarce01.js switch-branch <branch_name>
-```
-
-Description: Switches to the specified branch.
-
-
-6. Show files pending commit
-
-```shellscript
-node lioarce01.js status
-```
-
-Description: Displays the files that are ready to be committed.
-
-
-7. Make a commit
-
-```shellscript
-node lioarce01.js commit "<commit_message>"
-```
-
-Description: Commits all modified files with the provided message.
-
-
-8. Show commit history
-
-```shellscript
-node lioarce01.js log
-```
-
-Description: Displays the commit history of the current repository.
-
-
-9. Delete a branch
-
-```shellscript
-node lioarce01.js delete-branch <branch_name>
-```
-
-Description: Deletes the specified branch.
-
-
-10. Set a remote repository
-
-```shellscript
-node lioarce01.js set-remote <name> <repository_url>
-```
-
-Description: Sets a remote repository with the specified name and URL.
-
-
-11. Pull changes
-
-```shellscript
-node lioarce01.js pull
-```
-
-Description: Fetches and merges changes from the remote repository into the current directory.
-
-
-12. Push changes
-
-```shellscript
-node lioarce01.js push
-```
-
-Description: Sends local commits to the remote repository.
-
-
-13. Exit
-
-```shellscript
-node lioarce01.js exit
-```
-
-Description: Exits the program.
-
-
-
+You'll be prompted to enter your name and email address.
 
 ## Contribution 🤝
 
-If you would like to contribute, please open an issue or submit a pull request.
+We welcome contributions to Borne! If you'd like to contribute:
+
+1. Fork the repository
+2. Create your feature branch (git checkout -b feature/AmazingFeature)
+3. Commit your changes (git commit -m 'Add some AmazingFeature')
+4. Push to the branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
+
+
+Please make sure to update tests as appropriate and adhere to the project's coding standards.
+
+## License
+
+Borne is open source software licensed under the MIT License. This license permits you to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, subject to the following conditions:
+
+- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+
+
+For the full license text, please see the LICENSE file in the root directory of this project.
+
+Your feedback and contributions help make Borne better for everyone. Don't hesitate to reach out!
+
+Happy coding with Borne! May your repositories always be in order and your commits crystal clear. 🚀🐙
