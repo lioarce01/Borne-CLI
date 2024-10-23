@@ -3,16 +3,16 @@ import simpleGit from "simple-git";
 const git = simpleGit();
 
 export default {
-  command: "push",
+  command: "push <origin> <branch>",
   describe: "Push changes to a remote repository",
-  builder: () => {
+  builder: (yargs) => {
     yargs.positional("origin", {
-      describe: "repository to push to",
+      describe: "The name of the remote repository (e.g., origin)",
       type: "string",
       demandOption: true,
     });
     yargs.positional("branch", {
-      describe: "branch to push",
+      describe: "The name of the branch to push",
       type: "string",
       demandOption: true,
     });
@@ -24,8 +24,8 @@ export default {
       if (!origin || !branch) {
         console.error("Error: origin and branch are required");
       }
-      await git.push(origin, branch);
-      console.log("Changes pushed to a remote repository");
+      const result = await git.push(origin, branch);
+      console.log(`Changes successfully pushed to ${origin}/${branch}`);
     } catch (error) {
       console.error("Error pushing changes:", error.message);
     }
