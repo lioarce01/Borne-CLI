@@ -1,4 +1,4 @@
-package repo_commands
+package commands
 
 import (
 	"fmt"

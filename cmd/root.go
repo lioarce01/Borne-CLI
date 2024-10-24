@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"borne/cmd/repo_commands"
+	"borne/cmd/commands"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -22,7 +22,12 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.AddCommand(repo_commands.PushCmd)
+	rootCmd.AddCommand(commands.PushCmd)
+	rootCmd.AddCommand(commands.PullCmd)
+	rootCmd.AddCommand(commands.StatusCmd)
+	rootCmd.AddCommand(commands.CommitCmd)
+	rootCmd.AddCommand(commands.CloneCmd)
+	rootCmd.AddCommand(commands.ConfigCmd)
 }
 
 
