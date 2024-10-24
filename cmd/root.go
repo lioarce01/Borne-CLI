@@ -1,33 +1,34 @@
 package cmd
 
 import (
-	"borne/cmd/commands"
-	"os"
-
 	"github.com/spf13/cobra"
 )
 
 
 var rootCmd = &cobra.Command{
-	Use:   "borne",
-	Short: "A CLI for managing your Github repositories",
+	Use:   "brn",
+	Short: "Borne is a CLI for managing your Github repositories",
 	Long: `Borne is a  CLI for managing your Github repositories. It allows you to create, delete, and list repositories.`,
 }
 
-func Execute() {
-	err := rootCmd.Execute()
-	if err != nil {
-		os.Exit(1)
-	}
+func Execute() error {
+    return rootCmd.Execute()
 }
 
 func init() {
-	rootCmd.AddCommand(commands.PushCmd)
-	rootCmd.AddCommand(commands.PullCmd)
-	rootCmd.AddCommand(commands.StatusCmd)
-	rootCmd.AddCommand(commands.CommitCmd)
-	rootCmd.AddCommand(commands.CloneCmd)
-	rootCmd.AddCommand(commands.ConfigCmd)
+	rootCmd.AddCommand(CloneCmd)
+	rootCmd.AddCommand(ConfigCmd)
+	rootCmd.AddCommand(CommitCmd)
+	rootCmd.AddCommand(CreateRepoCmd)
+	rootCmd.AddCommand(PullCmd)
+	rootCmd.AddCommand(PushCmd)
+	rootCmd.AddCommand(StatusCmd)
+	rootCmd.AddCommand(AddCmd)
+	rootCmd.AddCommand(RemoteCmd)
+	rootCmd.AddCommand(LogCmd)
+	rootCmd.AddCommand(CreateBranchCmd)
+	rootCmd.AddCommand(SwitchBranchCmd)
+	rootCmd.AddCommand(DeleteBranchCmd)
+	rootCmd.AddCommand(MergeCmd)
+	rootCmd.AddCommand(RebaseCmd)
 }
-
-

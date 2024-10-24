@@ -1,7 +1,8 @@
-package commands
+package cmd
 
 import (
-	"fmt"
+	"os"
+	"os/exec"
 
 	"github.com/spf13/cobra"
 )
@@ -14,12 +15,19 @@ var PushCmd = &cobra.Command{
 	Use: "push [url]",
 	Short: "Push a local branch to a remote repository",
 	Run: func(cmd *cobra.Command, args []string) {
-		if len(args) < 1 {
-			fmt.Println("Error: must provide a URL")
+		if err := gitPush(branch); err != nil {
+			cmd.Println("Error pushing branch: ", err)
 			return
 		}
-		fmt.Printf("Pushing changes to repository %s in branch %s...\n", args[0], branch)
+		cmd.Println("Branch pushed successfully to branch:", branch)
 	},
+}
+
+func gitPush(branch string) error {
+	cmd := exec.Command("git", "push", "origin", branch)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	return cmd.Run()
 }
 
 func init() {
