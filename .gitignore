@@ -23,6 +23,7 @@ bin/        # Carpeta para archivos binarios
 *.swp       # Archivos swap de Vim
 *.swo       # Archivos swap de Vim
 .env
+.exe
 
 # Archivos de registro
 *.log       # Archivos de log
