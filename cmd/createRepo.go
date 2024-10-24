@@ -8,7 +8,6 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/joho/godotenv"
 	"github.com/spf13/cobra"
 )
 
@@ -22,9 +21,6 @@ var CreateRepoCmd = &cobra.Command{
 	Use:   "create",
 	Short: "Create a new GitHub repository",
 	Run: func(cmd *cobra.Command, args []string) {
-		if err := godotenv.Load(); err != nil {
-			log.Println("Warning: Error loading .env file; using environment variables instead")
-		}
 		
 		token := os.Getenv("GITHUB_TOKEN")
 		if token == "" {
@@ -67,7 +63,6 @@ var CreateRepoCmd = &cobra.Command{
 		}
 		defer resp.Body.Close()
 
-		// Manejar la respuesta
 		if resp.StatusCode == http.StatusCreated {
 			fmt.Printf("Repository '%s' created successfully.\n", repoName)
 		} else {
