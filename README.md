@@ -13,11 +13,19 @@ Welcome to Borne This project allows you to interact with Git and GitHub from th
 
 ## Installation 🛠️
 
-1. Install Borne globally using npm:
+1. Build the CLI: Open PowerShell and navigate to your project folder. Run the following command to compile the executable:
 
 ```shellscript
-npm install -g borne
+GOOS=windows GOARCH=amd64 go build -o brn.exe
 ```
+
+2. Set up the environment variable: Create a system environment variable named GITHUB_TOKEN and assign your GitHub token to it. To do this on Windows:
+   -Search for "System Properties" in the start menu.
+   -Select "Advanced system settings".
+   -Click on "Environment Variables".
+   -In "System variables", click on "New..." and add GITHUB_TOKEN as the variable name and your GitHub token as the value.
+
+3. Add the .exe location to the system PATH: In the same "Environment Variables" window, find the Path variable, select it, and click "Edit". Add the path where brn.exe is located.
 
 ## Usage 🚀
 
@@ -26,21 +34,21 @@ After installation, use the brn command followed by various subcommands to inter
 Available Commands
 
 ```shellscript
-brn clone [repoUrl] [dir]       Clone a repository
-brn create-repo [repoName]      Create a new repository
-brn add [files]                 Add files to the Git index (staging area)
-brn commit [message]            Commit changes with a message
-brn push `<origin>` `<branch>`      Push changes to a remote repository
-brn pull                        Pull changes from a remote repository
-brn status                      Show the status of the repository
-brn log                         Show commit history
-brn create-branch [branchName]  Create a new branch
-brn switch-branch [branchName]  Switch to a branch
-brn delete-branch [branchName]  Delete a branch
-brn set-remote [name] [url]     Set a remote repository
-brn set-dir [directory]         Set working directory for Git commands
-brn config-user                 Configure Git user name and email
-brn exit                        Exit the program
+brn clone [repoUrl]                 Clone a repository
+brn create [repoName]               Create a new Github repository
+brn add [files]                     Add files to the Git index (staging area)
+brn commit -m [message]             Commit changes with a message
+brn push `<origin>` -b `<branch>`   Push changes to a remote repository
+brn pull [url]                      Pull changes from a remote repository
+brn status                          Show the status of the repository
+brn log                             Show commit history
+brn branch [branchName]             Create a new branch
+brn switch [branchName]             Switch to a branch
+brn delete [branchName]             Delete a branch
+brn remote [name] [url]             Set a remote repository
+brn config                          Configure Git user name and email
+brn rebase                          Rebase a branch onto the specified branch
+brn merge [branch]                  Merge a branch into the current branch
 ```
 
 Examples
@@ -56,7 +64,7 @@ brn clone [https://github.com/user/repo.git](https://github.com/user/repo.git) m
 2. Create a new repository:
 
 ```shellscript
-brn create-repo my-new-project
+brn create my-new-project
 ```
 
 3. Add files to staging:
@@ -80,8 +88,8 @@ brn push origin main
 6. Create and switch to a new branch:
 
 ```shellscript
-brn create-branch feature-branch
-brn switch-branch feature-branch
+brn branch feature-branch
+brn switch feature-branch
 ```
 
 7. Show repository status:
@@ -99,13 +107,7 @@ brn log
 9. Set a remote repository:
 
 ```shellscript
-brn set-remote origin [https://github.com/user/repo.git](https://github.com/user/repo.git)
-```
-
-10. Set working directory:
-
-```shellscript
-brn set-dir /path/to/your/project
+brn remote origin [https://github.com/user/repo.git](https://github.com/user/repo.git)
 ```
 
 Configuration
@@ -113,7 +115,7 @@ Configuration
 Before using Borne, configure your Git user name and email:
 
 ```shellscript
-brn config-user
+brn config
 ```
 
 You'll be prompted to enter your name and email address.
