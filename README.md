@@ -131,9 +131,3 @@ We welcome contributions to Borne! If you'd like to contribute:
 5. Open a Pull Request
 
 Please make sure to update tests as appropriate and adhere to the project's coding standards.
-
-## [License](LICENSE)
-
-Your feedback and contributions help make Borne better for everyone. Don't hesitate to reach out!
-
-Happy coding with Borne! May your repositories always be in order and your commits crystal clear. 🚀🐙

@@ -1,18 +1,33 @@
-# Node.js
-node_modules/
+# Archivos de configuración de Go
+*.exe       # Ejecutables de Windows
+*.out       # Archivos de salida de Go
+*.test      # Archivos de prueba generados
+*.so        # Archivos compartidos
+*.a         # Archivos de objeto
 
-# Variables de entorno
+# Carpeta del módulo y dependencias
+vendor/     # Ignorar dependencias vendidas
+go.sum      # Archivos de suma de verificación (opcional si no utilizas el módulo de Go)
+go.mod      # Ignorar si prefieres manejar las dependencias de otra manera
+
+# Carpeta de caché de Go
+.cache/      # Carpeta de caché de Go
+
+# Archivos generados por el compilador
+build/      # Carpeta de construcción
+bin/        # Carpeta para archivos binarios
+
+# Archivos de configuración de IDE
+.idea/      # Carpeta de configuración de JetBrains
+.vscode/    # Carpeta de configuración de Visual Studio Code
+*.swp       # Archivos swap de Vim
+*.swo       # Archivos swap de Vim
 .env
+.exe
 
-# Logs
-logs
-*.log
+# Archivos de registro
+*.log       # Archivos de log
 
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# IDE specific files
-.vscode/
-*.sublime-project
-*.sublime-workspace
+# Archivos de caché
+*.tmp       # Archivos temporales
+*.bak       # Archivos de copia de seguridad
