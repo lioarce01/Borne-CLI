@@ -3,21 +3,20 @@ package main
 import (
 	"log"
 
-	"github.com/joho/godotenv"
 	"github.com/lioarce01/Borne-CLI/cmd"
 )
 
 func main() {
-    loadEnv()
+    // loadEnv()
 
     if err := cmd.Execute(); err != nil {
         log.Fatal(err)
     }
 }
 
-func loadEnv() {
-    err := godotenv.Load()
-    if err != nil {
-        log.Println("Error loading .env file")
-    }
-}
+// func loadEnv() {
+//     err := godotenv.Load("./.env")
+//     if err != nil {
+//         log.Println("Error loading .env file")
+//     }
+// }
